@@ -13,6 +13,8 @@ import { ContentComponent } from './main/content/content.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
 
+import {TodoListService} from "./todo-list/todo-list.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TodoListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

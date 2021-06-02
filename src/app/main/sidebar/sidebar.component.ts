@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import { Router} from "@angular/router";
+import { Location } from "@angular/common";
 
 export interface NavItem {
   name: String,
@@ -14,8 +15,14 @@ export interface NavItem {
 
 export class SidebarComponent{
 
-  constructor ( private router: Router ) {
-    console.log(this.router.url)
+  constructor ( private router: Router, location: Location ) {
+    router.events.subscribe(() => {
+      if (location.path() != "") {
+        this.currentPath = location.path();
+      } else {
+        this.currentPath = "/";
+      }
+    });
   }
 
   currentPath: String = this.router.url || ''
@@ -41,10 +48,6 @@ export class SidebarComponent{
 
   changeRoute(item: NavItem){
     this.router.navigate([item.path])
-      .then(()=>{
-        this.currentPath = this.router.url
-        console.log(this.currentPath)
-      })
   }
 
 }
