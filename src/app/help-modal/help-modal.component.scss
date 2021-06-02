@@ -1,0 +1,36 @@
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0, 0.4);
+
+  &__container {
+    width: 100%;
+    max-width: 550px;
+    background-color: white;
+  }
+
+  &__header, &__body {
+    padding: 1rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #236fff;
+
+    h2 {
+      color: white;
+    }
+
+    button {
+      padding: 5px 10px;
+    }
+  }
+}
