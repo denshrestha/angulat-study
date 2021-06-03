@@ -1,0 +1,28 @@
+.todo-form {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__container {
+    width: 100%;
+    max-width: 550px;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  input, select {
+    width: 100%;
+    padding: .7rem 1rem;
+    margin-bottom: .5rem;
+  }
+}

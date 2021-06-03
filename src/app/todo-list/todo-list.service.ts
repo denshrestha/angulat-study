@@ -15,7 +15,7 @@ export class TodoListService {
     {
       title: 'Buy Milk',
       priority: 'low',
-      completed: false
+      completed: true
     },
     {
       title: 'Learn Angular',
@@ -31,21 +31,24 @@ export class TodoListService {
   }
 
   deleteItem(id: Number): void{
+    console.log(id)
     const index = this.todoList.findIndex((item, index) => index === id)
     if(index > -1){
       this.todoList = this.todoList.splice(index, 1)
     }
+    console.log(this.todoList)
   }
 
-  editItem(id: Number, value: String): void{
+  editItem(id: Number, value: ToDoItem): void{
     const index = this.todoList.findIndex((item, index) => index === id)
     if(index > -1){
-      this.todoList[index].title = value
+      this.todoList[index] = value
     }
   }
 
   addItem(item: ToDoItem ): void{
     this.todoList.push(item)
+    console.log(this.todoList)
   }
 
   changeStatus(id: Number): void{

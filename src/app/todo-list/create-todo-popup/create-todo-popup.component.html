@@ -1,0 +1,28 @@
+<div class="todo-form">
+  <div class="todo-form__container">
+    <div class="container">
+      <div class="form">
+        <span>{{todo.title}}</span>
+        <input
+          type="text"
+          placeholder="Enter task name."
+          [(ngModel)]="todo.title"
+        >
+        <select name="select" id="select" [(ngModel)]="todo.priority">
+          <option value="none">None</option>
+          <option value="low">
+            Low
+          </option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input
+          type="submit"
+          value="Submit"
+          class="default-button"
+          (click)="submitChanges()"
+        >
+      </div>
+    </div>
+  </div>
+</div>

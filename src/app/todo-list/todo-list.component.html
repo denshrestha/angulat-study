@@ -1,3 +1,32 @@
 <div class="todo">
   <h2 class="todo__title">Todo List</h2>
+  <div class="todo__actions">
+    <button (click)="toggleForm()" class="default-button">
+      {{isPopupActive ? 'Close' : 'Add +'}}
+    </button>
+  </div>
+  <div class="todo__form">
+    <app-create-todo-popup
+      *ngIf="isPopupActive"
+      [todo]="defaultItem"
+      (submit)="submitChanges($event)"
+    ></app-create-todo-popup>
+  </div>
+  <div class="todo__list">
+    <ul class="list">
+      <li
+        class="list__item"
+        *ngFor="let todo of toDose; let i = index"
+      >
+        <span *ngIf="todo.completed; else notCompleted">=)</span>
+        <ng-template #notCompleted>
+          <span> =( </span>
+        </ng-template>
+        <span>{{i+1}})</span>
+        <p>{{todo.title}}</p>
+        <button (click)="editTodo(i)">Edit</button>
+        <button (click)="deleteTodo(i)">Delete</button>
+      </li>
+    </ul>
+  </div>
 </div>

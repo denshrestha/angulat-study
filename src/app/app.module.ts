@@ -14,6 +14,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 
 
 import {TodoListService} from "./todo-list/todo-list.service";
+import { CreateTodoPopupComponent } from './todo-list/create-todo-popup/create-todo-popup.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import {TodoListService} from "./todo-list/todo-list.service";
     SidebarComponent,
     HomeComponent,
     ContentComponent,
-    TodoListComponent
+    TodoListComponent,
+    CreateTodoPopupComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [TodoListService],
   bootstrap: [AppComponent]
 })
