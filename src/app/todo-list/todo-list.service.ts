@@ -26,33 +26,30 @@ export class TodoListService {
 
   constructor() {}
 
-  getList() :ToDoItem[] {
+  getList(): ToDoItem[] {
     return this.todoList
   }
 
-  deleteItem(id: Number): void{
-    console.log(id)
-    const index = this.todoList.findIndex((item, index) => index === id)
+  deleteItem(id: Number){
+    const index = this.todoList.findIndex((item, idx) => idx === id)
     if(index > -1){
-      this.todoList = this.todoList.splice(index, 1)
+      this.todoList.splice(index, 1)
     }
-    console.log(this.todoList)
   }
 
-  editItem(id: Number, value: ToDoItem): void{
-    const index = this.todoList.findIndex((item, index) => index === id)
+  editItem(id: Number, value: ToDoItem){
+    const index = this.todoList.findIndex((item, idx) => idx === id)
     if(index > -1){
       this.todoList[index] = value
     }
   }
 
-  addItem(item: ToDoItem ): void{
+  addItem(item: ToDoItem ){
     this.todoList.push(item)
-    console.log(this.todoList)
   }
 
-  changeStatus(id: Number): void{
-    const index = this.todoList.findIndex((item, index) => index === id)
+  changeStatus(id: Number){
+    const index = this.todoList.findIndex((item, idx) => idx === id)
     if(index > -1){
       this.todoList[index].completed = !this.todoList[index].completed
     }

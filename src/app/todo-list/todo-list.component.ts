@@ -14,7 +14,7 @@ export class TodoListComponent {
     priority: 'none',
     completed: false
   }
-  idx: any = null
+  idx: any = -1
 
   constructor(
     private list: TodoListService
@@ -30,7 +30,7 @@ export class TodoListComponent {
         priority: 'none',
         completed: false
       }
-      this.idx = null
+      this.idx = -1
     }
   }
 
@@ -44,8 +44,7 @@ export class TodoListComponent {
   }
 
   submitChanges(event: any){
-    console.log('event', event)
-    if(this.idx){
+    if(this.idx > -1){
       this.list.editItem(this.idx, event)
     } else {
       this.list.addItem(event)
@@ -55,11 +54,15 @@ export class TodoListComponent {
       priority: 'none',
       completed: false
     }
-    this.idx = null
+    this.idx = -1
     this.isPopupActive = false
   }
 
   deleteTodo(id: any){
     this.list.deleteItem(id)
+  }
+
+  markAsCompleted(id: any){
+    this.list.changeStatus(id)
   }
 }

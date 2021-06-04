@@ -16,6 +16,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {TodoListService} from "./todo-list/todo-list.service";
 import { CreateTodoPopupComponent } from './todo-list/create-todo-popup/create-todo-popup.component';
 import {FormsModule} from "@angular/forms";
+import { ShoppingComponent } from './shopping/shopping.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import {FormsModule} from "@angular/forms";
     HomeComponent,
     ContentComponent,
     TodoListComponent,
-    CreateTodoPopupComponent
+    CreateTodoPopupComponent,
+    ShoppingComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      HttpClientModule
     ],
   providers: [TodoListService],
   bootstrap: [AppComponent]

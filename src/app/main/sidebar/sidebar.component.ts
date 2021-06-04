@@ -38,7 +38,7 @@ export class SidebarComponent{
     },
     {
       name: 'Shopping cards',
-      path: '/shopping-cards'
+      path: '/shopping'
     },
     {
       name: 'Chart',

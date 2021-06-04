@@ -29,9 +29,47 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 10px;
+    transition: .2s linear;
+    cursor: pointer;
 
     p {
-      flex-grow: 2;
+      margin: 0 15px;
+      flex-grow: 1;
     }
+
+    &--text {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &--button {
+      margin: 0 .3rem;
+      padding: .5rem;
+      background-color: transparent;
+      outline: none;
+      border-radius: 50%;
+      border: none;
+      opacity: .7;
+      transition: .2s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(0,0,0, .1);
+        opacity: 1;
+        transition: .2s linear;
+      }
+    }
+  }
+}
+
+.completed {
+  background-color: #1dbf1d;
+  border-color: #1dbf1d;
+  color: white;
+  transition: .2s linear;
+
+  .list__item--button {
+    color: white;
   }
 }
