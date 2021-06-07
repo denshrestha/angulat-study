@@ -1,0 +1,26 @@
+.gallery {
+  overflow-y: scroll;
+  &__list {
+    margin: 1rem -.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    margin: 3rem .5rem;
+    padding: 1rem;
+    flex: 0 0 30%;
+    align-self: stretch;
+    border: 1px solid black;
+    overflow-y: scroll;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

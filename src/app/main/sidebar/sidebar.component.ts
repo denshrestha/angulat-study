@@ -37,8 +37,8 @@ export class SidebarComponent{
       path: '/todo-list'
     },
     {
-      name: 'Shopping cards',
-      path: '/shopping'
+      name: 'IMDB',
+      path: '/films'
     },
     {
       name: 'Chart',

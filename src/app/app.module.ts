@@ -16,8 +16,9 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {TodoListService} from "./todo-list/todo-list.service";
 import { CreateTodoPopupComponent } from './todo-list/create-todo-popup/create-todo-popup.component';
 import {FormsModule} from "@angular/forms";
-import { ShoppingComponent } from './shopping/shopping.component';
+import { FilmsComponent } from './films/films.component';
 import {HttpClientModule} from "@angular/common/http";
+import { FilmGalleryComponent } from './film-gallery/film-gallery.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     ContentComponent,
     TodoListComponent,
     CreateTodoPopupComponent,
-    ShoppingComponent
+    FilmsComponent,
+    FilmGalleryComponent
   ],
     imports: [
       BrowserModule,

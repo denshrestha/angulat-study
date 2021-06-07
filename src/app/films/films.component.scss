@@ -1,0 +1,19 @@
+.film {
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      width: 100%;
+    }
+
+    input {
+      margin-left: 30px;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+}

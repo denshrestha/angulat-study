@@ -1,0 +1,16 @@
+<div class="film">
+  <div class="film__header">
+    <h2 class="film__title">IMDb search</h2>
+    <input type="text" list="search" [(ngModel)]="query" (input)="search()">
+    <datalist id="search">
+      <option
+        class="film__item"
+        *ngFor="let film of data; let index = index"
+        autocomplete="off"
+      >
+        {{film.label}}
+      </option>
+    </datalist>
+  </div>
+  <app-film-gallery [gallery]="data"></app-film-gallery>
+</div>

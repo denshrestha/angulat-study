@@ -1,0 +1,17 @@
+<div class="gallery">
+  <ul
+    class="gallery__list"
+    *ngIf="gallery.length; else defaultGallery"
+  >
+    <li
+      class="gallery__item"
+      *ngFor="let item of gallery; let i = index"
+    >
+      <h3>{{item.label}}</h3>
+      <img [src]="item.image.imageUrl" alt="Poster">
+    </li>
+  </ul>
+  <ng-template #defaultGallery>
+    <div class="gallery__default">Type to find results...</div>
+  </ng-template>
+</div>
