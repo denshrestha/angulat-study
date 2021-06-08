@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Show} from "../films/films.model";
+import {Film} from "../films/films.model";
 
 @Component({
   selector: 'app-film-gallery',
@@ -9,7 +9,5 @@ import {Show} from "../films/films.model";
 
 export class FilmGalleryComponent {
 
-  @Input() gallery: Show[] = []
-
-
+  @Input() gallery: Film[] = []
 }

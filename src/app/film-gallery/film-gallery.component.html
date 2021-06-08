@@ -1,7 +1,7 @@
 <div class="gallery">
   <ul
     class="gallery__list"
-
+    *ngIf="gallery.length"
   >
     <li
       class="gallery__item"
@@ -10,16 +10,16 @@
       <div class="item">
         <div class="item__header">
           <h5>{{item.title}}</h5>
-          <span>Rank: {{item.rank}}</span>
+          <span>Rank: {{item.release_date}}</span>
         </div>
         <div class="item__body">
-<!--          <img *ngIf="item.image.url" [src]="item.image.url" alt="Poster">-->
-          <p>Actors: {{item.actors}}</p>
+          <img *ngIf="item.poster_path" [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path" alt="Poster">
+          <p>Actors: {{item.title}}</p>
         </div>
         <div class="item__footer">
-          <p>Year: {{item.year}}</p>
-          <p *ngIf="item.seriesEndYear">Years: {{item.seriesStartYear}} - {{item.seriesEndYear}}</p>
-          <p>Type: {{item.titleType}}</p>
+          <p>Year: {{item.title}}</p>
+          <p *ngIf="item.title">Years: {{item.title}} - {{item.title}}</p>
+          <p>Type: {{item.title}}</p>
         </div>
         <p>{{item.id}}</p>
       </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FilmsService} from "./films.service";
-import {Show} from "./films.model";
+import {Film} from "./films.model";
 
 @Component({
   selector: 'app-shopping',
@@ -9,7 +9,7 @@ import {Show} from "./films.model";
   styleUrls: ['./films.component.scss']
 })
 export class FilmsComponent implements OnInit {
-  data: Show[] = []
+  data: Film[] = []
   err: any
   query: String = '/movie/top_rated'
 
