@@ -1,14 +1,29 @@
 <div class="gallery">
   <ul
     class="gallery__list"
-    *ngIf="gallery.length; else defaultGallery"
+
   >
     <li
       class="gallery__item"
       *ngFor="let item of gallery; let i = index"
     >
-      <h3>{{item.label}}</h3>
-      <img [src]="item.image.imageUrl" alt="Poster">
+      <div class="item">
+        <div class="item__header">
+          <h5>{{item.title}}</h5>
+          <span>Rank: {{item.rank}}</span>
+        </div>
+        <div class="item__body">
+<!--          <img *ngIf="item.image.url" [src]="item.image.url" alt="Poster">-->
+          <p>Actors: {{item.actors}}</p>
+        </div>
+        <div class="item__footer">
+          <p>Year: {{item.year}}</p>
+          <p *ngIf="item.seriesEndYear">Years: {{item.seriesStartYear}} - {{item.seriesEndYear}}</p>
+          <p>Type: {{item.titleType}}</p>
+        </div>
+        <p>{{item.id}}</p>
+      </div>
+
     </li>
   </ul>
   <ng-template #defaultGallery>

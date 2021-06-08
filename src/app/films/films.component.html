@@ -1,14 +1,20 @@
 <div class="film">
   <div class="film__header">
     <h2 class="film__title">IMDb search</h2>
-    <input type="text" list="search" [(ngModel)]="query" (input)="search()">
+    <input
+      type="text"
+      list="search"
+      [(ngModel)]="query"
+      (input)="search()"
+      placeholder="Typr name of the movie or TV show here..."
+    >
     <datalist id="search">
       <option
         class="film__item"
         *ngFor="let film of data; let index = index"
         autocomplete="off"
       >
-        {{film.label}}
+        {{film.title}}
       </option>
     </datalist>
   </div>

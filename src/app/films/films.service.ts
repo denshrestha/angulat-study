@@ -9,6 +9,8 @@ import {debounceTime, map, tap} from "rxjs/operators";
 })
 export class FilmsService {
   result: Show[] = []
+  token: String = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMGZkYThlYTgyYmU5ZjM4NDkzODljMTAzYWQzYjQyNyIsInN1YiI6IjVlMTBhZDczNTgzNjFiMDAxMmMyNDMxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UImMXcCiV2bQ2ta8YmXtQJqMfrunX2jUBtDKjzVFeBA'
+  url: String = 'https://api.themoviedb.org/3'
   constructor(private http: HttpClient) { }
 
 
@@ -16,36 +18,34 @@ export class FilmsService {
     return this.result
   }
 
-  fetchProducts(url: any, query: any){
-    return this.http.get(url, {
+  fetchProducts(query: any){
+    return this.http.get(this.url + query, {
       observe: "response",
       responseType: 'json',
-      params: {q: query},
       headers: {
-        'x-rapidapi-key': 'bb49079d34mshf6e73afeabd3ad9p14839djsn8dcd3e5ee95f',
-        'x-rapidapi-host': 'imdb8.p.rapidapi.com'
+        'Authorization': `Bearer ${this.token}`,
+        'Content-Type': 'application/json;charset=utf-8'
       }
     }).pipe(
       debounceTime(200),
       map((resp:any) => {
         const {body} = resp
-        return Object.keys(body).map((item: any)=>{
-          if(item === 'd'){
-            return body[item]
-          }
-          return
-        })
+        console.log(body, resp)
+        // return Object.keys(body).map((item: any)=>{
+        //   if(item === 'results'){
+        //     return body[item]
+        //   }
+        //   return
+        // })
       }),
-      tap(resp => {
-        this.setResponseData(resp[0])
-      })
+      // tap((resp) => {
+      //   this.setResponseData(resp[0])
+      // })
     )
   }
 
-  setResponseData(response: any){
-    this.result = response.map((item: any)=>{
-      const {id, l, q, rank, s, y, yr, i} = item
-      return new Show(id, l, q, rank, s, y, yr, i)
-    })
+  setResponseData(response: Show[]){
+    this.result = response
+    console.log('result', this.result)
   }
 }

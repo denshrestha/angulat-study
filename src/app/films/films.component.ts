@@ -11,7 +11,7 @@ import {Show} from "./films.model";
 export class FilmsComponent implements OnInit {
   data: Show[] = []
   err: any
-  query: String = 'game of thr'
+  query: String = '/movie/top_rated'
 
   constructor(
     private http: HttpClient,
@@ -19,20 +19,22 @@ export class FilmsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.data = this.api.getResults()
   }
 
   search(){
-    this.api.fetchProducts('https://imdb8.p.rapidapi.com/auto-complete', this.query)
-      .subscribe(()=>{
-          this.data = this.api.getResults()
-          console.log('data', this.data)
-        },
-        (e) => {
-          this.err = e
-          console.log('ERROR', this.err)
-          this.data = []
-        })
+    if(this.query){
+      this.api.fetchProducts(this.query)
+        .subscribe(()=>{
+            this.data = this.api.getResults()
+            console.log('data', this.data)
+          },
+          (e) => {
+            this.err = e
+            console.log('ERROR', this.err)
+            this.data = []
+          })
+    }
   }
 
 
