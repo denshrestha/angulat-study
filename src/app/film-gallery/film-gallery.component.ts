@@ -10,4 +10,9 @@ import {Film} from "../films/films.model";
 export class FilmGalleryComponent {
 
   @Input() gallery: Film[] = []
+
+  getVoteColor(vote: Number): String{
+    return vote <= 3 ? 'color: red' :
+      vote <= 8 ? 'color: orange' : 'color: green'
+  }
 }

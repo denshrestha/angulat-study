@@ -1,13 +1,27 @@
 <div class="film">
-  <div class="film__header">
+  <div class="film__header glass">
     <h2 class="film__title">IMDb search</h2>
-    <div class="film__buttons">
-      <button class="film__btn" (click)="query = '/movie/latest'; search()">Latest</button>
-      <button class="film__btn" (click)="query='/movie/top_rated'; search()">Top Rated</button>
-      <button class="film__btn" (click)="query='/movie/popular'; search()">Popular</button>
-      <button class="film__btn" (click)="query='/movie/now_playing'; search()">Now Playing</button>
-      <button class="film__btn" (click)="query='/movie/upcoming'; search()">Upcoming</button>
-    </div>
+  </div>
+  <div class="film__buttons">
+    <button class="film__btn glass" (click)="query = '/movie/latest'; page = 1; search()">Latest</button>
+    <button class="film__btn glass" (click)="query='/movie/top_rated'; page = 1; search()">Top Rated</button>
+    <button class="film__btn glass" (click)="query='/movie/popular'; page = 1; search()">Popular</button>
+    <button class="film__btn glass" (click)="query='/movie/now_playing'; page = 1; search()">Now Playing</button>
+    <button class="film__btn glass" (click)="query='/movie/upcoming'; page = 1; search()">Upcoming</button>
   </div>
   <app-film-gallery [gallery]="data"></app-film-gallery>
+  <div class="film__pagination">
+    <div class="pagination">
+      <button class="pagination__arrow glass" (click)="prevPage()">Prev</button>
+      <button
+        *ngFor="let number of [1,2,3,4,5,6,7,8,9,10]"
+        (click)="page = number; search()"
+        [class]="page === number ? 'pagination__number--active' : ''"
+        class="pagination__number glass"
+      >
+        {{number}}
+      </button>
+      <button class="pagination__arrow glass" (click)="nextPage()">Next</button>
+    </div>
+  </div>
 </div>

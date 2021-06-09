@@ -1,4 +1,4 @@
-<div class="gallery">
+<div class="gallery glass">
   <ul
     class="gallery__list"
     *ngIf="gallery.length"
@@ -7,21 +7,20 @@
       class="gallery__item"
       *ngFor="let item of gallery; let i = index"
     >
-      <div class="item">
-        <div class="item__header">
-          <h5>{{item.title}}</h5>
-          <span>Rank: {{item.release_date}}</span>
-        </div>
+      <div class="item glass">
         <div class="item__body">
           <img *ngIf="item.poster_path" [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path" alt="Poster">
-          <p>Actors: {{item.title}}</p>
+          <p>{{item.title}}</p>
         </div>
         <div class="item__footer">
-          <p>Year: {{item.title}}</p>
-          <p *ngIf="item.title">Years: {{item.title}} - {{item.title}}</p>
-          <p>Type: {{item.title}}</p>
+          <p class="item__votes">
+            <span class="score" [style]="getVoteColor(item.vote_average)">{{item.vote_average}}</span>
+            <span>Votes: {{item.vote_count}}</span>
+          </p>
         </div>
-        <p>{{item.id}}</p>
+        <div class="item__btn">
+          <button class="glass">Reade more...</button>
+        </div>
       </div>
 
     </li>

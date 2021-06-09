@@ -12,6 +12,7 @@ export class FilmsComponent implements OnInit {
   data: Film[] = []
   err: any
   query: String = '/movie/top_rated'
+  page: number = 1
 
   constructor(
     private http: HttpClient,
@@ -24,7 +25,7 @@ export class FilmsComponent implements OnInit {
 
   search(){
     if(this.query){
-      this.api.fetchProducts(this.query)
+      this.api.fetchProducts(this.query, this.page)
         .subscribe(()=>{
             this.data = this.api.getResults()
             console.log('data', this.data)
@@ -37,5 +38,17 @@ export class FilmsComponent implements OnInit {
     }
   }
 
+  prevPage(){
+    if(this.page > 1){
+      this.page--
+      this.search()
+      return
+    }
+  }
+
+  nextPage(){
+    this.page++
+    this.search()
+  }
 
 }

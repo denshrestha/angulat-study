@@ -1,9 +1,9 @@
-<section class="sidebar">
+<section class="sidebar glass">
   <div class="sidebar__container">
     <nav class="sidebar__navigation">
       <ul class="navigation">
         <li
-          class="navigation__item"
+          class="navigation__item glass"
           *ngFor="let item of navigation"
           [class]="item.path === currentPath ? 'navigation__item--active' : ''"
           (click)="changeRoute(item)"

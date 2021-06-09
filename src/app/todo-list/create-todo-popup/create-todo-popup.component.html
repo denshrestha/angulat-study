@@ -1,14 +1,15 @@
 <div class="todo-form">
   <div class="todo-form__container">
     <div class="container">
-      <div class="form">
+      <div class="form glass">
         <span>{{todo.title}}</span>
         <input
           type="text"
           placeholder="Enter task name."
           [(ngModel)]="todo.title"
+          class="glass"
         >
-        <select name="select" id="select" [(ngModel)]="todo.priority">
+        <select class="glass" name="select" id="select" [(ngModel)]="todo.priority">
           <option value="none">None</option>
           <option value="low">
             Low

@@ -1,7 +1,7 @@
 .gallery {
-  overflow-y: scroll;
   &__list {
     margin: 1rem -.5rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,12 +11,9 @@
   }
 
   &__item {
-    margin: 3rem .5rem;
-    padding: 1rem;
+    margin: 1rem .5rem;
     flex: 0 0 30%;
     align-self: stretch;
-    border: 1px solid black;
-    overflow-y: scroll;
 
     img {
       width: 100%;
@@ -26,6 +23,7 @@
 }
 
 .item {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,4 +34,43 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  p {
+    padding: .3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #00a1d6;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      outline: none;
+      color: #00a1d6;
+      transition: .2s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #00a1d6;
+        color: white;
+        transition: .2s linear;
+      }
+    }
+  }
+}
+
+.score {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 3px solid currentColor;
 }

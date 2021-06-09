@@ -18,8 +18,8 @@ export class FilmsService {
     return this.result
   }
 
-  fetchProducts(query: String){
-    return this.http.get<Film[]>(`${this.url}${query}`, {
+  fetchProducts(query: String, page: Number){
+    return this.http.get<Film[]>(`${this.url}${query}?page=${page}`, {
       observe: "response",
       responseType: 'json',
       headers: {
