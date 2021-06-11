@@ -1,0 +1,19 @@
+<ul class="reviews">
+  <li
+    class="reviews__item"
+    *ngFor="let review of comments; let index = index"
+  >
+    <div class="item">
+      <div class="item__details">
+        <div class="item__avatar">
+          <img [src]="getAvatar(review.author_details.avatar_path)" alt="user avatar">
+        </div>
+        <p>{{review.author_details.username}}</p>
+      </div>
+      <div class="item__content">
+        <p class="item__content--text">{{review.content}}</p>
+        <p class="item__content--date">{{review.created_at | date}}</p>
+      </div>
+    </div>
+  </li>
+</ul>

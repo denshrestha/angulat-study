@@ -1,0 +1,32 @@
+<div class="film-details" *ngIf="movieData" [ngStyle]="{backgroundImage: movieBGImage}">
+  <div class="film-details__content">
+    <div class="film-details__info">
+      <img [src]="moviePoster" alt="film poster" width="300px" height="450px">
+      <div class="film-details__info--text">
+        <h2>{{movieData.title}}</h2>
+        <p>'{{movieData.tagline}}'</p>
+        <p>Realise date: {{movieData.release_date}} ({{movieData.status}})</p>
+        <p>Country:
+          <span *ngFor="let country of movieData.production_countries">{{country.name}}</span>
+        </p>
+        <p>Home page: <a [href]="movieData.homepage" target="_blank">{{movieData.homepage}}</a></p>
+        <p>{{movieData.overview}}</p>
+        <div class="film-details__info--companies glass" style="padding: 1rem">
+          <p>Production companies:</p>
+          <ul class="company">
+            <li *ngFor="let company of movieData.production_companies" class="company__item">
+              <div *ngIf="company.logo_path">
+                <img [src]="getCompanyLogo(company.logo_path)" alt="logo">
+                <p>{{company.name}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="film-details__reviews glass">
+      <h3>Reviews</h3>
+      <app-reviews [comments]="reviews" *ngIf="reviews && reviews.length"></app-reviews>
+    </div>
+  </div>
+</div>

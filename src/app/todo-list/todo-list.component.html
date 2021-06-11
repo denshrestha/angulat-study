@@ -1,5 +1,5 @@
 <div class="todo">
-  <h2 class="todo__title glass">Todo List</h2>
+  <h2 class="todo__title">Todo List</h2>
   <div class="todo__actions">
     <button (click)="toggleForm()" class="default-button">
       {{isPopupActive ? 'Close' : 'Add +'}}
@@ -13,7 +13,7 @@
     ></app-create-todo-popup>
   </div>
   <div class="todo__list">
-    <ul class="list glass">
+    <ul class="list">
       <li
         class="list__item glass"
         *ngFor="let todo of toDose; let i = index"

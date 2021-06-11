@@ -1,0 +1,39 @@
+.reviews {
+  margin: 1rem 0;
+  list-style: none;
+
+  &__item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+}
+
+.item {
+  &__details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__avatar {
+    margin: 1rem 1rem 1rem 0;
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    &--text {
+      margin: 1rem 0;
+    }
+    &--date {
+      text-align: right;
+      text-decoration: underline;
+    }
+  }
+}

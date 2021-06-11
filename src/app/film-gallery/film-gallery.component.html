@@ -1,4 +1,4 @@
-<div class="gallery glass">
+<div class="gallery">
   <ul
     class="gallery__list"
     *ngIf="gallery.length"
@@ -19,7 +19,10 @@
           </p>
         </div>
         <div class="item__btn">
-          <button class="glass">Reade more...</button>
+          <button
+            class="glass"
+            (click)="openMovieDetails(item.id)"
+          >Reade more...</button>
         </div>
       </div>
 

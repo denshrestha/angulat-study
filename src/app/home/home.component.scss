@@ -11,18 +11,21 @@
   &__title {
     padding: 1rem;
     font-size: 2rem;
-    color: #00a1d6;
+    color: #d7d7d7;
+    border-bottom: 1px solid rgba( 255, 255, 255, .6 );
   }
 
   &__description {
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    color: #d7d7d7;
   }
 
   &__date {
     margin-top: 3rem;
     align-self: flex-end;
-    border-bottom: 1px solid black;
+    color: #d7d7d7;
+    border-bottom: 1px solid rgba( 255, 255, 255, .6 );
   }
 
   img {

@@ -1,5 +1,5 @@
 <div class="film">
-  <div class="film__header glass">
+  <div class="film__header">
     <h2 class="film__title">IMDb search</h2>
   </div>
   <div class="film__buttons">
@@ -10,18 +10,18 @@
     <button class="film__btn glass" (click)="query='/movie/upcoming'; page = 1; search()">Upcoming</button>
   </div>
   <app-film-gallery [gallery]="data"></app-film-gallery>
-  <div class="film__pagination">
+  <div class="film__pagination glass">
     <div class="pagination">
-      <button class="pagination__arrow glass" (click)="prevPage()">Prev</button>
+      <button class="pagination__arrow " (click)="prevPage()">Prev</button>
       <button
         *ngFor="let number of [1,2,3,4,5,6,7,8,9,10]"
         (click)="page = number; search()"
         [class]="page === number ? 'pagination__number--active' : ''"
-        class="pagination__number glass"
+        class="pagination__number"
       >
         {{number}}
       </button>
-      <button class="pagination__arrow glass" (click)="nextPage()">Next</button>
+      <button class="pagination__arrow " (click)="nextPage()">Next</button>
     </div>
   </div>
 </div>

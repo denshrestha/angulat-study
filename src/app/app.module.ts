@@ -19,6 +19,8 @@ import {FormsModule} from "@angular/forms";
 import { FilmsComponent } from './films/films.component';
 import {HttpClientModule} from "@angular/common/http";
 import { FilmGalleryComponent } from './film-gallery/film-gallery.component';
+import { FilmDetailsComponent } from './film-details/film-details.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FilmGalleryComponent } from './film-gallery/film-gallery.component';
     TodoListComponent,
     CreateTodoPopupComponent,
     FilmsComponent,
-    FilmGalleryComponent
+    FilmGalleryComponent,
+    FilmDetailsComponent,
+    ReviewsComponent
   ],
     imports: [
       BrowserModule,

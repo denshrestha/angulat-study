@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #00a1d6;
+    color: #d7d7d7;
 
     h1 {
       width: 100%;
@@ -19,14 +19,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
   }
 
   &__btn {
     padding: .5rem 1rem;
     outline: none;
-    color: #00a1d6;
+    color: #d7d7d7;
     font-size: 1rem;
     font-weight: bold;
+    border: none;
   }
 
   &__pagination {
@@ -47,20 +49,23 @@
   &__arrow, &__number {
     padding: .5rem 1rem;
     font-size: 1rem;
-    color: #00a1d6;
+    color: #d7d7d7;
     transition: .2s linear;
+    background-color: #000000;
+    border: none;
+    border-radius: 50%;
 
     &:hover {
       cursor: pointer;
-      background-color: rgba(35, 111, 255, 0.64);
-      color: white;
+      background-color: white;
+      color: black;
       transition: .2s linear;
     }
   }
 
   &__number--active {
-    background-color: #236fff;
-    color: white;
+    background-color: #d7d7d7;
+    color: black;
     transition: .2s linear;
   }
 }
